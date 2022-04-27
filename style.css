@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+:root {
+    --Cred:#dc3545;
+    --Cgreen: #198754;
+    --Cwhite: #ffffff;
+}
+/* ================= PRELOADER ============== */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+
+.content-preloader {
+    position: absolute;
+    border: 13px solid #cddad3; 
+    border-top: 13px solid var(--Cgreen); 
+    border-bottom: 13px solid var(--Cgreen); 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+
+/* ================= MODAL ================== */
+.open-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: none;
+    
+}
+
+.open-content-modal {
+    max-width: 400px;
+    height: 350px;
+    margin:150px auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#icon-delete {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--Cgreen);
+}
+
+
+.open-content-modal img {
+    width: 150px;
+    height: 150px;
+   
+}
+
+.open-content-modal .text-offline {
+    color: var(--Cgreen);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+.to-do-list {
+    position: relative;
+    min-height: 600px;
+}
+.content-img img {
+    width: 120px;
+}
+
+
+form input {
+    flex-basis: 85%;
+    border: none;
+}
+
+::placeholder {
+    font-size: 14px;
+}
+
+form #btn {
+    flex-basis: 15%;
+    text-align: center;
+    line-height: 38px;
+    margin-left: 5px;
+    background-color: var(--Cgreen);
+    border-radius: 3px;
+    color: var(--Cwhite);
+    cursor: pointer;
+}
+
+form #btn:hover {
+    opacity: 0.8;
+}
+
+#ErrorText {
+    color: var(--Cred);
+    transition: 0.3s;
+    font-size: 14px;
+}
+#employ-list {
+    margin-top: 16px;
+}
+#employ-list p {
+    position: relative;
+    list-style: none;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 0;
+    padding-left: 6px;
+    background-color: rgba(83, 168, 80, 0.3);
+    cursor: pointer;
+}
+
+
+#employ-list p:nth-child(even) {
+    background-color: rgba(83, 168, 80, 0.5);
+
+}
+
+
+
+/* CLOSE BUTTON */
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: inherit;
+    font-size: 22px;    
+    width: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.close:hover {
+    transition: 0.3s ease-in-out;
+    color: white;
+    background-color: var(--Cred);
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.wrap i {
+    cursor: pointer;
+    color: var(--Cgreen);
+}
+
+.content-right {
+    align-items: center;
+}
+
+.content-right #counter {
+    margin-right: 7px;
+}
+
+
+/* RESPONSIVE PART */
+
+@media  (max-width:425px) {
+    form #btn  {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .open-content-modal {
+        max-width: 300px;
+        height: 250px;
+    }
+}
+
+ 
